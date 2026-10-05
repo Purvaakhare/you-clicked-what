@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  html {
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    scroll-behavior: smooth;
+    color: #292433;
+    background-color: #F8F6F1;
+  }
+  body {
+    margin: 0;
+    background-color: #F8F6F1;
+    color: #292433;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+
+  /* ─── Warm Editorial Glass Layer Card ─── */
+  .surface-card {
+    background: #FFFDF9;
+    border: 1px solid rgba(51, 42, 77, 0.07);
+    border-radius: 24px;
+    box-shadow:
+      0 2px 4px rgba(51, 42, 77, 0.02),
+      0 8px 24px rgba(51, 42, 77, 0.04),
+      0 20px 48px -12px rgba(51, 42, 77, 0.03);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+  }
+
+  .surface-card-interactive:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 107, 95, 0.35);
+    box-shadow:
+      0 4px 12px rgba(51, 42, 77, 0.04),
+      0 16px 36px rgba(51, 42, 77, 0.07),
+      0 32px 64px -16px rgba(51, 42, 77, 0.05);
+  }
+
+  /* Backward compatible glass card with new warm palette */
+  .glass-card {
+    background: rgba(255, 253, 249, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(51, 42, 77, 0.08);
+    border-radius: 24px;
+    box-shadow:
+      0 1px 3px rgba(51, 42, 77, 0.02),
+      0 8px 24px rgba(51, 42, 77, 0.04),
+      0 20px 40px -10px rgba(51, 42, 77, 0.03);
+  }
+
+  /* ─── Plum Primary Button ─── */
+  .btn-plum {
+    background: #332A4D;
+    color: #FFFDF9;
+    font-weight: 700;
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(51, 42, 77, 0.22), 0 1px 2px rgba(33, 26, 50, 0.15);
+    transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.18s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-plum:hover {
+    background: #211A32;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 26px rgba(51, 42, 77, 0.32);
+  }
+  .btn-plum:active {
+    transform: translateY(1px) scale(0.98);
+  }
+
+  /* Backward compatible button styles updated to Plum & Coral */
+  .btn-primary {
+    background: #332A4D;
+    color: #FFFDF9;
+    font-weight: 700;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(51, 42, 77, 0.22);
+    transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.18s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .btn-primary:hover {
+    background: #211A32;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(51, 42, 77, 0.3);
+  }
+  .btn-primary:active {
+    transform: translateY(1px) scale(0.98);
+  }
+  .btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+
+  /* Coral Accent Button */
+  .btn-coral {
+    background: #FF6B5F;
+    color: #FFFFFF;
+    font-weight: 700;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(255, 107, 95, 0.35);
+    transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.18s ease;
+    cursor: pointer;
+  }
+  .btn-coral:hover {
+    background: #E85A4F;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 107, 95, 0.45);
+  }
+  .btn-coral:active {
+    transform: translateY(1px) scale(0.98);
+  }
+
+  /* Outline / Cream Secondary Button */
+  .btn-outline {
+    border: 1.5px solid rgba(51, 42, 77, 0.2);
+    color: #332A4D;
+    background: #FFFDF9;
+    border-radius: 16px;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(51, 42, 77, 0.03);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+  }
+  .btn-outline:hover {
+    background: #F2EDE4;
+    border-color: #332A4D;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(51, 42, 77, 0.06);
+  }
+  .btn-outline:active {
+    transform: translateY(0.5px) scale(0.98);
+  }
+
+  /* Input fields with plum/coral focus ring */
+  .input-field {
+    background: #FFFDF9;
+    border: 1.5px solid #E6E1D8;
+    border-radius: 16px;
+    box-shadow: inset 0 1px 3px rgba(51, 42, 77, 0.03);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+    font-family: inherit;
+    color: #292433;
+  }
+  .input-field::placeholder { color: #9A94A2; }
+  .input-field:focus {
+    border-color: #332A4D;
+    box-shadow: inset 0 1px 2px rgba(51, 42, 77, 0.02), 0 0 0 4px rgba(51, 42, 77, 0.1);
+  }
+
+  /* Subtle Warm Texture */
+  .editorial-pattern {
+    background-image: radial-gradient(circle, rgba(51, 42, 77, 0.06) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  .dot-pattern {
+    background-image: radial-gradient(circle, rgba(51, 42, 77, 0.06) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+}
+
+/* ─── Scrolling Scams Chip Strip ─── */
+.chip-strip {
+  display: flex;
+  width: max-content;
+  animation: scrollChips 34s linear infinite;
+  will-change: transform;
+}
+.chip-strip-wrap:hover .chip-strip { animation-play-state: paused; }
+@keyframes scrollChips {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ─── Reduced Motion Support ─── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .chip-strip { animation: none !important; }
+}
